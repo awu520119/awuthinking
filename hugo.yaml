@@ -58,7 +58,7 @@ params:
     - posts
   homeInfoParams:
     Title: "以無为始，从無处生"
-    Content: "“天下万物生于有，有生于無。”——《道德经》\n\n于旧我之废墟，生新知之萌芽。"
+    Content: "“天下万物生于有，有生于無。”——《道德经》\n"
 
 menu:
   main:
