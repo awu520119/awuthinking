@@ -1,0 +1,72 @@
+baseURL: "https://awuthinking.top/"
+relativeURLs: false
+defaultContentLanguage: zh
+title: "阿無的博客空间"
+theme: "PaperMod"
+enableRobotsTXT: true
+
+pagination:
+  pagerSize: 10
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+caches:
+  images:
+    dir: :cacheDir/images
+
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+
+languages:
+  zh:
+    label: "简体中文"
+    locale: "zh-CN"
+    weight: 1
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+
+params:
+  env: production
+  description: "我的个人世界"
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  mainSections:
+    - posts
+  homeInfoParams:
+    Title: "你好，这是一个可在局域网访问的示意博客"
+    Content: "站点基于 Hugo 搭建，使用 PaperMod 主题。现在你可以从手机、平板或同网段电脑直接访问它。"
+
+menu:
+  main:
+    - identifier: home
+      name: 首页
+      url: /
+      weight: 10
+    - identifier: posts
+      name: 文章
+      url: /posts/
+      weight: 20
+    - identifier: archives
+      name: 归档
+      url: /archives/
+      weight: 30
+    - identifier: about
+      name: 关于
+      url: /about/
+      weight: 60
