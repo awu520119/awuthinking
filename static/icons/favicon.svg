@@ -1,6 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="iconTitle">
-  <title id="iconTitle">Awuthinking favicon</title>
+  <title id="iconTitle">Awuthinking handwriting and thinking favicon</title>
   <rect width="512" height="512" rx="112" fill="#f5efe2"/>
-  <circle cx="256" cy="256" r="138" fill="none" stroke="#171717" stroke-width="40"/>
-  <circle cx="336" cy="336" r="34" fill="#c87437"/>
+  <path
+    d="M112 356c58 22 115 20 169-8 33-17 61-41 86-73"
+    fill="none"
+    stroke="#c87437"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="24"
+  />
+  <path d="M256 108 360 212 294 398H218L152 212Z" fill="#171717"/>
+  <path d="M256 170 308 222 276 320H236L204 222Z" fill="#f5efe2"/>
+  <circle cx="256" cy="228" r="16" fill="#171717"/>
+  <path
+    d="M256 246v86"
+    fill="none"
+    stroke="#171717"
+    stroke-linecap="round"
+    stroke-width="14"
+  />
+  <circle cx="256" cy="338" r="16" fill="#171717"/>
+  <circle cx="316" cy="128" r="16" fill="#c87437"/>
+  <circle cx="356" cy="108" r="11" fill="#c87437"/>
+  <circle cx="386" cy="146" r="9" fill="#c87437"/>
 </svg>
