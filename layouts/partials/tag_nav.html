@@ -1,0 +1,39 @@
+{{- $tagsTaxonomy := .Language.Params.Taxonomies.tag | default "tags" }}
+{{- $tagTerms := index site.Taxonomies $tagsTaxonomy }}
+{{- if $tagTerms }}
+{{- $currentTerm := "" }}
+{{- if and (eq .Kind "term") (eq .Data.Plural $tagsTaxonomy) }}
+{{- $currentTerm = .Data.Term }}
+{{- end }}
+{{- $postCount := len (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+{{- with site.GetPage "section" "posts" }}
+<nav class="tag-nav" aria-label="标签导航">
+    <div class="tag-nav-meta">
+        <span class="tag-nav-title">按标签浏览</span>
+        {{- with site.GetPage (printf "/%s" $tagsTaxonomy) }}
+        <a class="tag-nav-index" href="{{ .RelPermalink }}">标签索引</a>
+        {{- end }}
+    </div>
+    <ul class="tag-nav-list">
+        <li>
+            <a class="tag-nav-item{{ if eq $currentTerm "" }} active{{ end }}" href="{{ .RelPermalink }}">
+                <span>全部</span>
+                <span class="tag-nav-count">{{ $postCount }}</span>
+            </a>
+        </li>
+        {{- range $tagTerms.Alphabetical }}
+        {{- $name := .Name }}
+        {{- $count := .Count }}
+        {{- with site.GetPage (printf "/%s/%s" $tagsTaxonomy $name) }}
+        <li>
+            <a class="tag-nav-item{{ if eq $currentTerm $name }} active{{ end }}" href="{{ .RelPermalink }}">
+                <span>#{{ .LinkTitle }}</span>
+                <span class="tag-nav-count">{{ $count }}</span>
+            </a>
+        </li>
+        {{- end }}
+        {{- end }}
+    </ul>
+</nav>
+{{- end }}
+{{- end }}

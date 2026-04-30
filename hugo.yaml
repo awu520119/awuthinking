@@ -1,7 +1,7 @@
 baseURL: "https://awuthinking.top/"
 relativeURLs: false
 defaultContentLanguage: zh
-title: "以無为始"
+title: "阿無的留白"
 theme: "PaperMod"
 enableRobotsTXT: true
 
@@ -70,10 +70,14 @@ menu:
       name: 文章
       url: /posts/
       weight: 20
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 30
     - identifier: archives
       name: 归档
       url: /archives/
-      weight: 30
+      weight: 40
     - identifier: about
       name: 关于
       url: /about/
