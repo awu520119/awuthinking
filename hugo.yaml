@@ -1,7 +1,7 @@
 baseURL: "https://awuthinking.top/"
 relativeURLs: false
 defaultContentLanguage: zh
-title: "阿無的博客空间"
+title: "以無为始"
 theme: "PaperMod"
 enableRobotsTXT: true
 
@@ -38,7 +38,15 @@ markup:
 
 params:
   env: production
-  description: "我的个人世界"
+  description: "清空旧我，接纳未知。在無处留白，让新知生长。"
+  assets:
+    favicon: /icons/favicon.ico
+    favicon16x16: /icons/favicon-16x16.png
+    favicon32x32: /icons/favicon-32x32.png
+    apple_touch_icon: /icons/apple-touch-icon.png
+    safari_pinned_tab: /icons/safari-pinned-tab.svg
+    theme_color: "#f5efe2"
+    msapplication_TileColor: "#f5efe2"
   defaultTheme: auto
   ShowReadingTime: true
   ShowShareButtons: false
@@ -49,8 +57,8 @@ params:
   mainSections:
     - posts
   homeInfoParams:
-    Title: "你好，这是一个可在局域网访问的示意博客"
-    Content: "站点基于 Hugo 搭建，使用 PaperMod 主题。现在你可以从手机、平板或同网段电脑直接访问它。"
+    Title: "以無为始，从無处生"
+    Content: "“天下万物生于有，有生于無。”——《道德经》\n\n于旧我之废墟，生新知之萌芽。"
 
 menu:
   main:
