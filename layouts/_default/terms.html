@@ -1,34 +1,24 @@
 {{- define "main" }}
 
+{{- if .Title }}
 <header class="page-header">
-    {{- partial "breadcrumbs.html" . }}
-    <h1>
-        {{ .Title }}
-        <sup class="page-header-meta">{{ len .Data.Terms }} 个</sup>
-    </h1>
+    <h1>{{ .Title }}</h1>
     {{- if .Description }}
     <div class="post-description">
-        {{ .Description | markdownify }}
-    </div>
-    {{- end }}
-    {{- with site.GetPage "section" "posts" }}
-    <div class="post-description">
-        <a href="{{ .RelPermalink }}">查看全部文章</a>
+        {{ .Description }}
     </div>
     {{- end }}
 </header>
+{{- end }}
 
 <ul class="terms-tags">
     {{- $type := .Type }}
-    {{- range .Data.Terms.ByCount }}
+    {{- range $key, $value := .Data.Terms.Alphabetical }}
     {{- $name := .Name }}
     {{- $count := .Count }}
     {{- with site.GetPage (printf "/%s/%s" $type $name) }}
-    <li class="tag-card">
-        <a href="{{ .RelPermalink }}">
-            <span class="tag-card-name">#{{ .LinkTitle }}</span>
-            <span class="tag-card-count">{{ $count }} 篇文章</span>
-        </a>
+    <li>
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
     </li>
     {{- end }}
     {{- end }}

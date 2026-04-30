@@ -1,6 +1,4 @@
 {{- define "main" }}
-{{- $tagsTaxonomy := .Language.Params.Taxonomies.tag | default "tags" }}
-{{- $showTagNav := or (eq .Section "posts") (and (eq .Kind "term") (eq .Data.Plural $tagsTaxonomy)) }}
 
 {{- if (and site.Params.profileMode.enabled .IsHome) }}
 {{- partial "index_profile.html" . }}
@@ -24,20 +22,12 @@
     {{- end }}
     {{- end }}
   </h1>
-  {{- if and (eq .Kind "term") (eq .Data.Plural $tagsTaxonomy) }}
-  <div class="post-description">
-    与“{{ .Title }}”相关的 {{ len .Pages }} 篇文章。
-  </div>
-  {{- else if .Description }}
+  {{- if .Description }}
   <div class="post-description">
     {{ .Description | markdownify }}
   </div>
   {{- end }}
 </header>
-{{- end }}
-
-{{- if $showTagNav }}
-{{- partial "tag_nav.html" . }}
 {{- end }}
 
 {{- if .Content }}
@@ -92,13 +82,6 @@
   {{- if (ne (.Param "hideSummary") true) }}
   <div class="entry-content">
     <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
-  </div>
-  {{- end }}
-  {{- with .GetTerms $tagsTaxonomy }}
-  <div class="entry-tags">
-    {{- range . }}
-    <a class="entry-tag" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
-    {{- end }}
   </div>
   {{- end }}
   {{- if not (.Param "hideMeta") }}
