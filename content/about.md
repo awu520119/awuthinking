@@ -1,6 +1,6 @@
 ---
 title: "关于"
-date: 2026-04-29T13:40:00+01:00
+layout: "page"
 draft: false
 ---
 
