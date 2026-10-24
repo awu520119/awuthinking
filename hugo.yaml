@@ -40,7 +40,7 @@ params:
   env: production
   description: "清空旧我，接纳未知。在無处留白，让新知生长。"
   assets:
-    favicon: /icons/favicon.ico
+    favicon: /icons/favicon-32x32.png
     favicon16x16: /icons/favicon-16x16.png
     favicon32x32: /icons/favicon-32x32.png
     apple_touch_icon: /icons/apple-touch-icon.png
