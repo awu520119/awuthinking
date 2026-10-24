@@ -66,10 +66,6 @@ menu:
       name: 首页
       url: /
       weight: 10
-    - identifier: posts
-      name: 文章
-      url: /posts/
-      weight: 20
     - identifier: tags
       name: 标签
       url: /tags/
