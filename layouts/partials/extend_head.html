@@ -1,0 +1,14 @@
+{{- if and .IsPage (eq .Section "posts") }}
+<style>
+  #reading-progress {
+    position: fixed;
+    inset: 0 auto auto 0;
+    z-index: 1000;
+    width: 0;
+    height: 3px;
+    background: #71856e;
+    box-shadow: 0 1px 5px rgb(64 82 61 / 35%);
+    transition: width 80ms linear;
+  }
+</style>
+{{- end }}

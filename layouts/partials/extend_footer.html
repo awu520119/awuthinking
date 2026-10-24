@@ -1,0 +1,19 @@
+{{- if and .IsPage (eq .Section "posts") }}
+<div id="reading-progress" aria-hidden="true"></div>
+<script>
+  (function () {
+    const progress = document.getElementById('reading-progress');
+    if (!progress) return;
+
+    const updateProgress = function () {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const percent = scrollable > 0 ? Math.min(100, (window.scrollY / scrollable) * 100) : 0;
+      progress.style.width = percent + '%';
+    };
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+  }());
+</script>
+{{- end }}
