@@ -58,7 +58,7 @@ params:
     - posts
   homeInfoParams:
     Title: "保持好奇，继续生长。"
-    Content: "读一点书，想一些问题，做一些尝试。\n把值得记录的留下来，把还没想明白的继续想下去。"
+    Content: "读一点书，想一些问题，做一些尝试。\n\n把值得记录的留下来，把还没想明白的继续想下去。"
 
 menu:
   main:
